@@ -1,0 +1,47 @@
+﻿@model DOTNprojekt.ViewModels.ModVM
+
+<form enctype="multipart/form-data" method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Upload Mod</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Mod_Name"></label>
+			<input asp-for="Mod_Name" class="form-control"/>
+			<span asp-validation-for="Mod_Name" class="text-danger"></span>
+		</div>
+		
+		<label>Choose appropriate mod character:</label>
+		<select asp-for="Mod_Char" class="form-select" id="select1">
+			<option value="Dante">Dante</option>
+			<option value="Nero">Nero</option>
+			<option value="Vergil">Vergil</option>
+			<option value="None">None</option>
+		</select>
+		
+		<br />
+
+		<label>Choose appropriate mod category:</label>
+		<select asp-for="Mod_cat" class="form-select" id="select1">
+			<option value="Visual">Visual</option>
+			<option value="Gameplay">Gameplay</option>
+			<option value="Bloody Palace">Bloody Palace</option>
+			<option value="None">None</option>
+		</select>
+
+		<div class="form-group">
+			<label for="formFile" class="form-label mt-4">Select your mod (must be zipped)</label>
+			<input asp-for="Mod_File" class="form-control" type="file">
+			<span asp-validation-for="Mod_File"></span>
+		</div>
+
+		<br />
+		<br />
+
+		<button type="submit" class="btn btn-primary" style="width:150px">Upload</button>
+		<a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back To Home
+		</a>
+	</div>
+</form>

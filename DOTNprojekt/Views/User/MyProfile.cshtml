@@ -1,0 +1,43 @@
+﻿@model DOTNprojekt.Models.User
+
+@{
+    ViewData["Title"] = "MyProfile";
+}
+
+<h1>My Profile</h1>
+
+<div>
+    <h4>Welcome</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.E_Mail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_Mail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.n_Uploads)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.n_Uploads)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back To Home
+		</a>
+</div>

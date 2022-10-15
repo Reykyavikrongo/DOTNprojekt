@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DOTNprojekt.ViewModels.PresentationModVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt=4">
+        <div class="col-6">
+            <h2 class="text-primary">Mod List</h2>
+        </div>
+    </div>
+    <br />
+
+
+<table class="table table-active table-bordered striped" style="width:100%">
+    <tbody>
+        @{
+        int i = 0;
+
+        @foreach(var obj in Model)
+        {
+            if (i % 2 == 0)
+            {
+                @:<tr>
+                ++i;
+            }
+            else
+            {
+                ++i;
+            }
+                <td>
+                        @{
+                            if(@obj.image)
+                            {
+                                @:<img src="@Url.Content(@obj.Name)" height="250px" width="250px"/>
+                            }
+                            else
+                            {
+                                @:<img src="@Url.Content("~/lib/DefaultImage.png")" height="250px" width="250px"/>
+                            }
+                    }
+                </td>
+                <td>
+                    @obj.ZipName
+                </td>
+                    <td>
+                    @{string downloadFile = @obj.ZipName + ".zip";}
+                    <a href="~/UploadedFiles/@obj.UploaderName/@obj.ZipName/@downloadFile" download>Download</a>
+                </td>
+            if (i % 2 == 0)
+            {
+                @:</tr>
+            }
+        }
+        if (i % 2 != 0)
+        {
+            @:<td>
+               
+            @:</td>
+            @:<td>
+
+            @:</td>
+            @:<td>
+
+            @:</td>
+        }
+
+        }
+    </tbody>
+</table>
+</div>

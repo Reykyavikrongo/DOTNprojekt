@@ -13,7 +13,7 @@ namespace DOTNprojekt.Models
         [DisplayName("User Name")]
         public string User_Name { get; set; }
         [Required]
-        [MinLength(3, ErrorMessage = "Error, Password must be at least 3 characters long")]
+        [MinLength(3, ErrorMessage = "Error, Password must be at least 3 characters longs")]
         [MaxLength(25, ErrorMessage = "Error, Password can't be longer then 25 characters")]
         public string Password { get; set; }
         [DisplayName("E-mail")]
